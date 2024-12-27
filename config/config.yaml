@@ -5,3 +5,18 @@ data_ingestion:
   source_URL: https://github.com/mukeshsingh05/END-TO-END-MACHINE-LEARNING-PROJECT-WITH-MLFLOW/raw/410e1c5d33d329d10f912ca1b82928d9c91a23b0/wine%20quality.zip
   local_data_file: artifacts/data_ingestion/data.zip
   unzip_dir: artifacts/data_ingestion
+
+data_validation:
+  root_dir: artifacts/data_validation
+  unzip_data_dir : artifacts/data_ingestion/WineQT.csv
+  STATUS_FILE: artifacts/data_validation/status.txt
+
+data_transformation:
+  root_dir : artifacts/data_transformation
+  data_path : artifacts/data_ingestion/WineQT.csv
+
+model_trainer:
+  root_dir : artifacts/model_trainer
+  train_data_path : artifacts/data_transformation/train.csv
+  test_data_path : artifacts/data_transformation/test.csv
+  model_name : model.joblib
